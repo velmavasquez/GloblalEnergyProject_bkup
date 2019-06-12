@@ -5,20 +5,20 @@ import pandas
 import os
 
 print (os.environ)
-# if not os.environ.get('Dyno'):
-#     import config
-#     print(config.name)
+if not os.environ.get('DYNO'):
+    import config
+    print(config.name)
     
-# if os.environ.get("JAWSDB_URL"):
-#     dburl=os.environ["JAWSDB_URL"]
-# else:
-#     dburl = config.dburl
+if os.environ.get("JAWSDB_URL"):
+    dburl=os.environ["JAWSDB_URL"]
+else:
+    dburl = config.dburl
 
-# engine= sqlalchemy.create_engine(dburl)
+engine= sqlalchemy.create_engine(dburl)
 
-# df= pandas.read_sql("Select * From GDP_Brazil", engine)
-# print(df)
-# app = Flask(__name__)
+df= pandas.read_sql("Select * From GDP_Brazil", engine)
+print(df)
+app = Flask(__name__)
 
 @app.route("/")
 def home():
