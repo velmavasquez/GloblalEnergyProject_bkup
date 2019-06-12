@@ -4,10 +4,10 @@ import flask_sqlalchemy
 import pandas
 import os
 
-# print (os.environ)
-if not os.environ.get('Dyno'):
-    import config
-    print(config.name)
+print (os.environ)
+# if not os.environ.get('Dyno'):
+#     import config
+#     print(config.name)
     
 if os.environ.get("JAWSDB_URL"):
     dburl=os.environ["JAWSDB_URL"]
