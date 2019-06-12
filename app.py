@@ -1,6 +1,12 @@
 from flask import Flask, jsonify, render_template
 import flask_sqlalchemy
 import pandas
+import os
+
+if os.environ["JAWSDB_URL"]:
+    dburl=os.environ["JAWSDB_URL"]
+else:
+    dburl = "sqlite://somesqlitefilehere"
 
 app = Flask(__name__)
 
@@ -10,7 +16,7 @@ def home():
 
 @app.route("/data")
 def data():
-    return jsonify('data':'is empty')
+    return jsonify({'data':'is empty'})
 
 If __name__=="__main__":
     app.run
