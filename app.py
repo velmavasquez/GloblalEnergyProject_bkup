@@ -18,5 +18,5 @@ def home():
 def data():
     return jsonify({'data':'is empty'})
 
-If __name__=="__main__":
+if __name__=="__main__":
     app.run
